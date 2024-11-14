@@ -4,8 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    //echo "Hello";
     return view('layouts.app');
+
 });
 //
 //Route::get('/dashboard', function () {
