@@ -2,11 +2,18 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Admin\Controllers\GalleryController;
+//use App\Http\Controllers\Admin\GalleryCategoryController;
 
 Route::get('/', function () {
     return view('layouts.app');
 
 });
+
+
+
+Route::resource('galleries', GalleryController::class);
+//Route::resource('gallery_categories', GalleryCategoryController::class);
 //
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
@@ -19,3 +26,4 @@ Route::get('/', function () {
 //});
 //
 //require __DIR__.'/auth.php';
+
