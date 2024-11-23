@@ -28,7 +28,14 @@
                             <div class="card-header">
                                 <div class="card-title">@yield('sub-title')</div>
                             </div> <!--end::Header--> <!--begin::Form-->
-                            @yield('content')
+                            <div class="container">
+                                @yield('content')
+                                <div class="clearfix">
+                                <br>
+                                </div>
+                            </div>
+
+
                         </div> <!--end::Quick Example--> <!--begin::Input Group-->
                                          </div> <!--end::Col--> <!--begin::Col-->
 
