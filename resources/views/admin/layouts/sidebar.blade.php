@@ -6,7 +6,7 @@
 
                 <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-pencil-square"></i>
                         <p>
-                            Forms
+                            Таблицы
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
