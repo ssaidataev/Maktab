@@ -14,15 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('competitions', function (Blueprint $table) {
-            $table->integer('id', true);
+            $table->id();
             $table->integer('competition_type_id')->index('competitions_competition_id_foreign');
-            $table->string('name', 100);
-            $table->string('logo', 45)->nullable();
+            $table->string('name');
+            $table->string('logo')->nullable();
             $table->string('description')->nullable();
-            $table->string('document', 45)->nullable();
-            $table->boolean('is_active')->default(true);
-            $table->dateTime('created_at')->nullable();
-            $table->dateTime('updated_at')->nullable();
+            $table->string('document')->nullable();
+            $table->boolean('is_active')->default(false);
+            $table->timestamps();
         });
     }
 
