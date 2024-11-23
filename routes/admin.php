@@ -1,10 +1,9 @@
 <?php
+use App\Http\Controllers\Admin\CompetitionController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MarkTypeController;
 
-Route::get('admin/sample', function(){
-    return view('admin.sample');
-});
-
+Route::resource('admin/competitions', CompetitionController::class);
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('mark-types', MarkTypeController::class);
