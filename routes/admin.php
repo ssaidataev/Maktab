@@ -1,8 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\TimesController;
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('times', TimesController::class);
+});
+
 Route::resource('galleries', GalleryController::class);
     Route::get('admin/sample', function(){
     return view('admin.sample');
+
 }
 );
 
