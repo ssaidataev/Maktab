@@ -23,20 +23,17 @@
             <div class="container-fluid"> <!--begin::Row-->
                 <div class="row"> <!--begin::Col-->
 
-                    <div class="col-md-12"> <!--begin::Quick Example-->
+                    <div class="col-md-12 container"> <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-4"> <!--begin::Header-->
                             <div class="card-header">
                                 <div class="card-title">@yield('sub-title')</div>
                             </div> <!--end::Header--> <!--begin::Form-->
-                            <div class="container">
-                                @yield('content')
-                                <div class="clearfix">
-                                <br>
-                                </div>
-                            </div>
+                             
+ 
+                            @yield('content')
 
-
-                        </div> <!--end::Quick Example--> <!--begin::Input Group-->
+                           
+                         </div> <!--end::Quick Example--> <!--begin::Input Group-->
                                          </div> <!--end::Col--> <!--begin::Col-->
 
                 </div> <!--end::Row--> <!--begin::Row-->
