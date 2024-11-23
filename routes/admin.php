@@ -1,11 +1,17 @@
 <?php
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FeedbackController;
+use App\Http\Controllers\Admin\CompetitionController;
+use App\Http\Controllers\Admin\MarkTypeController;
+  
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('mark-types', MarkTypeController::class);
+    Route::resource('competitions', CompetitionController::class);
+    Route::resource('feedbacks', FeedbackController::class);
 
-    Route::get('admin/sample', function(){
-    return view('admin.sample');
-}
-);
-
+});
+ 
 //Route::middleware('auth')->group(function () {
 //    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 //    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -13,4 +19,3 @@ use App\Http\Controllers\Admin\FeedbackController;
 //
 //
 //});
-Route::resource('admin/feedbacks', FeedbackController::class);
