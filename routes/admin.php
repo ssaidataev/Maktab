@@ -1,6 +1,6 @@
 <?php
+use App\Http\Controllers\Admin\FeedbackController;
 
-Route::resource('galleries', GalleryController::class);
     Route::get('admin/sample', function(){
     return view('admin.sample');
 }
@@ -13,3 +13,4 @@ Route::resource('galleries', GalleryController::class);
 //
 //
 //});
+Route::resource('admin/feedbacks', FeedbackController::class);

@@ -14,7 +14,21 @@
                         <li class="nav-item"> <a href="./forms/general.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                 <p>General Elements</p>
                             </a> </li>
+
                     </ul>
+                <li class="nav-item"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
+                        <p>
+                            Feedback
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item"> <a href="{{route('feedbacks.create')}}" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Добавить</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="{{route('feedbacks.index')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <p>Список</p>
+                            </a> </li>
                 </li>
 
             </ul> <!--end::Sidebar Menu-->
