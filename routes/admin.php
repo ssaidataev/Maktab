@@ -4,16 +4,16 @@ use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\CompetitionController;
 use App\Http\Controllers\Admin\MarkTypeController;
 use App\Http\Controllers\Admin\TimesController;
-  
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('mark-types', MarkTypeController::class);
     Route::resource('competitions', CompetitionController::class);
     Route::resource('feedbacks', FeedbackController::class);
     Route::resource('times', TimesController::class);
 
- 
+
 });
- 
+
 //Route::middleware('auth')->group(function () {
 //    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 //    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
