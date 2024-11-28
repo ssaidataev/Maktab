@@ -1,30 +1,35 @@
-php
-
-
-
 @extends('admin.layouts.app')
 
+@section('title')
+    Тип компитенции
+@endsection
 
+@section('sub-title')
+    Изменить
+@endsection
 
 @section('content')
-    <h1>Edit Competition Type</h1>
-    <form action="{{ route('admin.competition_types.update', $competition_types->id) }}" method="POST">
+    <div class="card">
+        <div class="card-body">
+    <form action="{{ route('admin.competition_types.update', $competitionType->id) }}" method="POST">
         @csrf
         @method('PUT')
 
 
         <div>
-            <label>Name:</label>
-            <input type="text" name="name" value="{{ $competition_types->name }}" required>
+            <label>Название:</label>
+            <input class="form-control" type="text" name="name" value="{{ $competitionType->name }}" required>
         </div>
         <div>
-            <label>Description:</label>
-            <textarea name="description" required>{{ $competition_types->description }}</textarea>
+            <label>Описание:</label>
+            <textarea class="form-control" name="description" required>{{ $competitionType->description }}</textarea>
         </div>
         <div>
-            <label>Is Active:</label>
-            <input type="checkbox" name="is_active" value="1" {{ $competition_types->is_active ? 'checked' : '' }}>
+            <label>Активность:</label>
+            <input type="checkbox" name="is_active" value="1" {{ $competitionType->is_active ? 'checked' : '' }}>
         </div>
-        <button type="submit">Save</button>
+        <button class="btn btn-outline-primary" type="submit">Изменить</button>
     </form>
+        </div>
+    </div>
 @endsection
