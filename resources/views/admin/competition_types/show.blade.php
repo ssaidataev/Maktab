@@ -1,16 +1,19 @@
-php
-
-
-
 @extends('admin.layouts.app')
-
-
-
-@section('content')
-    <h1>View Competition Type</h1>
-    <p><strong>ID:</strong> {{ $competition_types->id }}</p>
-    <p><strong>Name:</strong> {{ $competition_types->name }}</p>
-    <p><strong>Description:</strong> {{ $competition_types->description }}</p>
-    <p><strong>Is Active:</strong> {{ $competition_types->is_active ? 'Yes' : 'No' }}</p>
-    <a href="{{ route('competition_types.index') }}">Back</a>
+@section('title')
+    Тип оценки
 @endsection
+
+@section('sub-title')
+    Показать
+@endsection
+@section('content')
+    <div class="card">
+        <div class="card-body">
+            <p><strong>#:</strong> {{ $competitionType->id }}</p>
+            <p><strong>Название:</strong> {{ $competitionType->name }}</p>
+            <p><strong>Описания:</strong> {{ $competitionType->description }}</p>
+            <p><strong>Активность:</strong> {{ $competitionType->is_active ? 'Да' : 'Нет' }}</p>
+            <a href="{{ route('admin.competition_types.index') }}" class="btn btn-secondary">Назад</a>
+        </div>
+    </div>
+@stop
