@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('competitions', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id', true);
             $table->integer('competition_type_id')->index('competitions_competition_id_foreign');
             $table->string('name');
             $table->text('logo')->nullable();
