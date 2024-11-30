@@ -21,8 +21,11 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('competition_types', CompetitionTypeController::class);
 });
+use App\Http\Controllers\Admin\PositionsController;
 
-
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('positions', PositionsController::class);
+});
 
 
 
