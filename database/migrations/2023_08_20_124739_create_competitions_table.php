@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->integer('competition_type_id')->index('competitions_competition_id_foreign');
             $table->string('name');
-            $table->string('logo')->nullable();
+            $table->text('logo')->nullable();
             $table->string('description')->nullable();
-            $table->string('document')->nullable();
+            $table->text('document')->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

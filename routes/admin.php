@@ -5,15 +5,14 @@ use App\Http\Controllers\Admin\CompetitionController;
 use App\Http\Controllers\Admin\MarkTypeController;
 use App\Http\Controllers\Admin\TimesController;
 
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('mark-types', MarkTypeController::class);
     Route::resource('competitions', CompetitionController::class);
     Route::resource('feedbacks', FeedbackController::class);
     Route::resource('times', TimesController::class);
     Route::resource('competition_types', CompetitionTypeController::class);
-
-
-
+    Route::resource('competitions', CompetitionController::class);
 });
 
 //Route::middleware('auth')->group(function () {
