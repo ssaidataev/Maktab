@@ -2,129 +2,104 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Competition;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Competition;
+use App\Models\CompetitionType;
+use Illuminate\Http\Request;
 
 class CompetitionController extends Controller
 {
-    /**
-     * Отобразить список соревнований.
-     *
-     * @return View
-     */
-    public function index(): View
+    public function index()
     {
-        $competitions = Competition::all();
+        $competitions = Competition::with('competitionType')->get();
         return view('admin.competitions.index', compact('competitions'));
     }
 
-    /**
-     * Показать форму для создания нового соревнования.
-     *
-     * @return View
-     */
-    public function create(): View
+    public function create()
     {
-        return view('admin.competitions.create');
+        $competitionTypes = CompetitionType::all();
+        return view('admin.competitions.create', compact('competitionTypes'));
     }
 
-    /**
-     * Сохранить новое соревнование в базе данных.
-     *
-     * @param  Request  $request
-     * @return RedirectResponse
-     */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
-            'competition_type_id' => 'required|integer',
-            'name' => 'required|string|max:255',
-            'logo' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
-            'document' => 'nullable|string|max:255',
-            'is_active' => 'boolean',
+            'competition_type_id' => 'required',
+            'name' => 'required|min:3',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'description' => 'nullable|min:3',
+            'document' => 'nullable|mimes:pdf,doc,docx',
+            'is_active' => 'nullable|boolean',
         ]);
 
-        $competition = new Competition([
-            'competition_type_id' => $request->get('competition_type_id'),
-            'name' => $request->get('name'),
-            'logo' => $request->get('logo'),
-            'description' => $request->get('description'),
-            'document' => $request->get('document'),
-            'is_active' => $request->get('is_active', false),
-        ]);
+        $competition = new Competition($request->all());
+
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            $competition->logo = $logoPath;
+        }
+
+        if ($request->hasFile('document')) {
+            $documentPath = $request->file('document')->store('documents', 'public');
+            $competition->document = $documentPath;
+        }
 
         $competition->save();
 
-        return redirect('/admin/competitions')->with('success', 'Соревнование создано!');
+        return redirect()->route('admin.competitions.index')
+            ->with('success', 'Competition created successfully.');
     }
 
-    /**
-     * Отобразить указанное соревнование.
-     *
-     * @param  Competition  $competition
-     * @return View
-     */
-    public function show(Competition $competition): View
+    public function show($id)
     {
+        $competition = Competition::findOrFail($id);
         return view('admin.competitions.show', compact('competition'));
     }
 
-    /**
-     * Показать форму для редактирования указанного соревнования.
-     *
-     * @param  Competition  $competition
-     * @return View
-     */
-    public function edit(Competition $competition): View
+    public function edit($id)
     {
-        return view('admin.competitions.edit', compact('competition'));
+        $competition = Competition::findOrFail($id);
+        $competitionTypes = CompetitionType::all();
+        return view('admin.competitions.edit', compact('competition', 'competitionTypes'));
     }
 
-    /**
-     * Обновить указанное соревнование в базе данных.
-     *
-     * @param  Request  $request
-     * @param  Competition  $competition
-     * @return RedirectResponse
-     */
-    public function update(Request $request, Competition $competition): RedirectResponse
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'competition_type_id' => 'required|integer',
-            'name' => 'required|string|max:255',
-            'logo' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
-            'document' => 'nullable|string|max:255',
-            'is_active' => 'boolean',
+            'competition_type_id' => 'required',
+            'name' => 'required|min:3',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'description' => 'nullable|min:3',
+            'document' => 'nullable|mimes:pdf,doc,docx',
+            'is_active' => 'nullable|boolean',
         ]);
 
-        $competition->update([
-            'competition_type_id' => $request->get('competition_type_id'),
-            'name' => $request->get('name'),
-            'logo' => $request->get('logo'),
-            'description' => $request->get('description'),
-            'document' => $request->get('document'),
-            'is_active' => $request->get('is_active', false),
-        ]);
+        $competition = Competition::findOrFail($id);
+        $competition->fill($request->all());
 
-        return redirect('/admin/competitions')->with('success', 'Соревнование обновлено!');
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            $competition->logo = $logoPath;
+        }
+
+        if ($request->hasFile('document')) {
+            $documentPath = $request->file('document')->store('documents', 'public');
+            $competition->document = $documentPath;
+        }
+
+        $competition->save();
+
+        return redirect()->route('admin.competitions.index')
+            ->with('success', 'Competition updated successfully.');
     }
 
-    /**
-     * Удалить указанное соревнование из базы данных.
-     *
-     * @param  Competition  $competition
-     * @return RedirectResponse
-     */
-    public function destroy(Competition $competition): RedirectResponse
+
+    public function destroy($id)
     {
+        $competition = Competition::findOrFail($id);
         $competition->delete();
 
-        return redirect('/admin/competitions')->with('success', 'Соревнование удалено!');
+        return redirect()->route('admin.competitions.index')
+            ->with('success', 'Competition deleted successfully.');
     }
 }
