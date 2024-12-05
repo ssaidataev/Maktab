@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('achievement_places', function (Blueprint $table) {
-            $table->integer('id', true)->primary();
+            $table->integer('id',true)->primary();
             $table->string('name', 45)->nullable();
             $table->string('description', 100)->nullable();
             $table->boolean('is_active')->nullable();

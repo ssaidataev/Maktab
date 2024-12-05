@@ -1,31 +1,38 @@
 @extends('admin.layouts.app')
 
-
-
-@section('content')
-    <h1>Create Mark Type</h1>
-    <form action="{{ route('admin.times.store') }}" method="POST">
-        @csrf
-        <div>
-            <label>half:</label>
-            <input class="form-control" type="text" name="half" required>
-        </div>
-        <div>
-            <label>Start time</label>
-            <input type="text" class="form-control" name="start_time" required>
-        </div>
-        <div>
-            <label>End time</label>
-            <input type="text" name="end_time" class="form-control">
-        </div>
-        <div>
-            <label>Created at</label>
-            <input type="date" name="created_at" class="form-control">
-        </div>
-        <div>
-            <label>Updated at</label>
-            <input type="date" name="updated_at" class="form-control">
-        </div>
-        <button class="btn btn-primary" type="submit">Save</button>
-    </form>
+@section('title')
+    Тип оценки
 @endsection
+
+@section('sub-title')
+    Добавить
+@endsection
+@section('content')
+    <div class="card">
+        <div class="card-body">
+            <form action="{{ route('admin.times.store') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Смена:</label>
+                    <select id="half" name="half" class="form-control" required>
+                        <option value="" disabled selected>Выберите смену...</option>
+                        <option value="1">1-я Смена</option>
+                        <option value="2">2-я Смена</option>
+                        <option value="3">3-я Смена</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="description">Начало времени:</label>
+                    <input type="time" id="start_time" name="start_time" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="is_active">Окончание времени:</label>
+                    <input type="time" class="form-control" id="end_time" name="end_time" >
+                </div>
+<br>
+                <button type="submit" class="btn btn-primary">Добавить</button>
+
+            </form>
+        </div>
+    </div>
+@stop

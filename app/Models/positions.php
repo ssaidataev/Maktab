@@ -5,20 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Time extends Model
+class positions extends Model
 {
     use HasFactory;
-
-
-
-    protected $table = 'times';
-
-
-
+    protected $table = 'positions';
     protected $fillable = [
-        'half',
-        'start_time',
-        'end_time',
-
-        ];
+        'name',
+        'description',
+        'is_active',
+    ];
 }
