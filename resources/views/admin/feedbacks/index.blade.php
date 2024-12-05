@@ -1,20 +1,26 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    {{$feedbacks}}
-    <table class="table" border="1">
-        <tr>
-            <th>#</th>
-            <th>full_name</th>
-            <th>text</th>
-            <th>photo</th>
-            <th>is_active</th>
-            <th>created_at</th>
-            <th>updated_at</th>
-            <th>Edit</th>
-            <th>Delete</th>
-
-        </tr>
+    <div class="card">
+        <div class="card-header">
+            <a href="{{ route('admin.feedbacks.create') }}" class="btn btn-primary">Создать новый</a>
+        </div>
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Имя</th>
+                    <th>Текст</th>
+                    <th>Фото</th>
+                    <th>Активность</th>
+                    <th>Дата создания</th>
+                    <th>Дата изменения</th>
+                    <th>Изменить</th>
+                    <th>Удалить</th>
+                </tr>
+                </thead>
+                <tbody>
 
 
         @foreach($feedbacks as $feedback)
@@ -22,17 +28,26 @@
                 <td>{{$loop->iteration}}</td>
                 <td>{{$feedback->full_name}}</td>
                 <td>{{$feedback->text}}</td>
-                <td>{{$feedback->photo}}</td>
-                <td>{{$feedback->is_active}}</td>
+                <td>
+                    @if($feedback->photo)
+                        <img src="{{ asset('storage/' . $feedback->photo) }}" alt="Фото" style="width: 50px; height: 50px;">
+                    @else
+                        Нет фото
+                    @endif
+                </td>
+                <td>{{$feedback->is_active?'Yes' : 'No'}}</td>
                 <td>{{$feedback->created_at}}</td>
                 <td>{{$feedback->updated_at}}</td>
-                <td><a class="btn btn-outline-warning" href="{{route('feedbacks.edit',$feedback)}}">Изменить</a></td>
+                <td><a class="btn btn-outline-warning" href="{{route('admin.feedbacks.edit',$feedback)}}">Изменить</a></td>
                 <td>
-                    <form action="{{ route('feedbacks.destroy', $feedback) }}"
+
+                    <form action="{{ route('admin.feedbacks.destroy', $feedback) }}"
                           method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <input class="btn btn-danger"  type="submit" value="Delete">
+                        <input class="btn btn-danger"  type="submit" value="Удалить">
+                        <a href="{{ route('admin.feedbacks.show', $feedback->id) }}" class="btn btn-info ">Показать</a>
+
                     </form>
 
                 </td>
