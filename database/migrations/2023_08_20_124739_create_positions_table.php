@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->string('name', 45);
+            $table->string('name', 145);
             $table->string('description', 100);
             $table->boolean('is_active')->nullable();
             $table->dateTime('created_at')->nullable();

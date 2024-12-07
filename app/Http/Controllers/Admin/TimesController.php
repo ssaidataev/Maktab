@@ -27,13 +27,12 @@ class TimesController extends Controller
 
     public function store(Request $request)
     {
-//        $request->validate([
-//            'half' => 'required|max:2|min:1',
-//            'start_time' => 'required|date_format:H:i',
-//            'end_time' => 'required|date_format:H:i',
-//            'created_at' => 'required|date',
-//            'updated_at' => 'required|date',
-//        ]);
+        $request->validate([
+            'half' => 'required|max:3|min:1',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i',
+
+        ]);
 
 
 
@@ -49,16 +48,16 @@ class TimesController extends Controller
 
     public function show($id)
     {
-        $times = Time::findOrFail($id);
-        return view('Admin.times.show', compact('times'));
+        $time = Time::findOrFail($id);
+        return view('Admin.times.show', compact('time'));
     }
 
 
 
     public function edit($id)
     {
-        $times = Time::findOrFail($id);
-        return view('Admin.times.edit', compact('times'));
+        $time= Time::findOrFail($id);
+        return view('admin.times.edit', compact('time'));
     }
 
 
@@ -68,18 +67,14 @@ class TimesController extends Controller
         $request->validate([
 
 
-            'half' => 'required|max:2|min:1',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i',
-            'created_at' => 'required|date',
-            'updated_at' => 'required|date',
+            //'half' => 'required|max:3|min:1',
+            //'start_time' => 'required|date_format:H:i',
+            //'end_time' => 'required|date_format:H:i',
+
         ]);
 
-
-
-        $times = Time::findOrFail($id);
-        $times->update($request->all());
-
+        $time = Time::findOrFail($id);
+        $time->update($request->all());
 
 
         return redirect()->route('admin.times.index')
@@ -90,8 +85,8 @@ class TimesController extends Controller
 
     public function destroy($id)
     {
-        $times = Time::findOrFail($id);
-        $times->delete();
+        $time = Time::findOrFail($id);
+        $time->delete();
 
 
 

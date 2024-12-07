@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id', true);
             $table->string('full_name', 100);
             $table->tinyText('text');
-            $table->string('photo', 45);
+            $table->string('photo', 145);
             $table->boolean('is_active')->default(true);
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
