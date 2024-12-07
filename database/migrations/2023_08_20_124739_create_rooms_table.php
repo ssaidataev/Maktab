@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id', true);
             $table->string('name', 45);
             $table->string('floor', 45);
-            $table->string('description', 45)->nullable();
+            $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
