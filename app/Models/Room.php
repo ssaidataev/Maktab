@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class positions extends Model
+class Room extends Model
 {
     use HasFactory;
-    protected $table = 'positions';
     protected $fillable = [
         'name',
+        'floor',
         'description',
         'is_active',
     ];

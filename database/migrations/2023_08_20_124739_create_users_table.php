@@ -27,7 +27,7 @@ return new class extends Migration
             $table->text('two_factor_recovery_codes')->nullable();
             $table->rememberToken();
             $table->boolean('gender');
-            $table->string('phone', 15)->nullable()->unique('phone_UNIQUE');
+            $table->string('phone', 30)->nullable()->unique('phone_UNIQUE');
             $table->date('birth_date');
             $table->string('address');
             $table->boolean('is_active')->nullable()->default(true);
