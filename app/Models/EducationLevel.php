@@ -10,6 +10,8 @@ class EducationLevel extends Model
 {
     use HasFactory;
 
+    protected $table = 'education_levels';
+
     protected $fillable = [
         'name',
         'description',
@@ -18,4 +20,6 @@ class EducationLevel extends Model
         'created_at',
         'updated_at',
     ];
+
+    public $timestamps = true; // Для использования created_at и updated_at
 }

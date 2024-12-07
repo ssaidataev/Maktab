@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class EducationPlan extends Model
 {
     use HasFactory;
-    protected $table = 'rooms';
+
+    protected $table = 'education_plans';
+
     protected $fillable = [
         'name',
-        'floor',
         'description',
         'is_active',
     ];
+
+    public $timestamps = true; // Для использования created_at и updated_at
 }

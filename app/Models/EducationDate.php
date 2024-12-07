@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class EducationDate extends Model
 {
     use HasFactory;
+
+    protected $table = 'education_dates';
+
     protected $fillable = [
         'start_year',
         'end_year',
@@ -21,5 +24,6 @@ class EducationDate extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
 
 }
