@@ -10,7 +10,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('admin.news-category.store') }}" method="POST">
+            <form action="{{ route('admin.mark-types.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="name">Название:</label>
