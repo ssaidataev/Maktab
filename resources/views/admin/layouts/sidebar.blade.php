@@ -23,10 +23,10 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="{{route('feedbacks.create')}}" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item"> <a href="{{route('admin.feedbacks.create')}}" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
                                 <p>Добавить</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="{{route('feedbacks.index')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item"> <a href="{{route('admin.feedbacks.index')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                 <p>Список</p>
                             </a> </li>
                 </li>
