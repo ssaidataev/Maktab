@@ -67,7 +67,7 @@ class TimesController extends Controller
         $request->validate([
 
 
-           // 'half' => 'required|max:3|min:1',
+            //'half' => 'required|max:3|min:1',
             //'start_time' => 'required|date_format:H:i',
             //'end_time' => 'required|date_format:H:i',
 

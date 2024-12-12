@@ -9,8 +9,8 @@ class StudentStatus extends Model
 {
     use HasFactory;
 
-    protected $table = 'mark_types';
-
+    protected $table = 'student_statuses';
+ 
     protected $fillable = [
         'name',
         'description',
@@ -18,6 +18,6 @@ class StudentStatus extends Model
         'created_at',
         'updated_at',
     ];
-
+ 
     public $timestamps = true; // Для использования created_at и updated_at
 }
