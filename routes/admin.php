@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\CompetitionController;
 use App\Http\Controllers\Admin\MarkTypeController;
 use App\Http\Controllers\Admin\TimesController;
-
+use App\Http\Controllers\Admin\StudentStatusController;
 use App\Http\Controllers\Admin\AchievementLevelController;
 use App\Http\Controllers\Admin\AchievementPlaceController;
 use App\Http\Controllers\Admin\EducationDateController;
@@ -24,6 +24,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('feedbacks', FeedbackController::class);
     Route::resource('times', TimesController::class);
     Route::resource('competition_types', CompetitionTypeController::class);
+    Route::resource('student-statuses', StudentStatusController::class);
     Route::resource('news-category', NewsCategoryController::class);
 
     Route::resource('subjects', SubjectController::class);
