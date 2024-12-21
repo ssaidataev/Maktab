@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\EducationDateController;
 use App\Http\Controllers\Admin\EducationPlanController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\PositionsController;
+use App\Http\Controllers\Admin\AchievementScoreController;
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -18,10 +19,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('competitions', CompetitionController::class);
     Route::resource('feedbacks', FeedbackController::class);
     Route::resource('times', TimesController::class);
-  
+
     Route::resource('competition_types', CompetitionTypeController::class);
     Route::resource('achievement_levels', AchievementLevelController::class);
     Route::resource('achievement_places', AchievementPlaceController::class);
+    Route::resource('achievement_scores', AchievementScoreController::class);
+
 
     Route::resource('education_dates', EducationDateController::class);
     Route::resource('education_plans', EducationPlanController::class);
