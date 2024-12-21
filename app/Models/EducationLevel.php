@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Testing\Fluent\Concerns\Has;
 
 class EducationLevel extends Model
 {
@@ -16,6 +17,8 @@ class EducationLevel extends Model
         'description',
         'order',
         'is_active',
+        'created_at',
+        'updated_at',
     ];
 
     public $timestamps = true; // Для использования created_at и updated_at

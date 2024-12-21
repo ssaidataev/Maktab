@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EducationDate extends Model
+class StudentClasses extends Model
 {
     use HasFactory;
-
-    protected $table = 'education_dates';
+    protected $table = 'classes';
 
     protected $fillable = [
-        'start_year',
-        'end_year',
+        'education_date_id',
+        'supervisor_id',
+        'room_id',
+        'number',
+        'literal',
         'is_active',
+        'class_type',
         'created_at',
         'updated_at',
     ];
@@ -24,6 +27,4 @@ class EducationDate extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
-
-
 }
