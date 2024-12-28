@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\CompetitionController;
 use App\Http\Controllers\Admin\MarkTypeController;
 use App\Http\Controllers\Admin\TimesController;
+use App\Http\Controllers\Admin\TeacherController;
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -13,6 +14,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('times', TimesController::class);
     Route::resource('competition_types', CompetitionTypeController::class);
     Route::resource('competitions', CompetitionController::class);
+    Route::resource('teachers', TeacherController::class);
 });
 
 //Route::middleware('auth')->group(function () {
