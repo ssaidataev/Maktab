@@ -17,6 +17,9 @@ use App\Http\Controllers\Admin\EducationDateController;
 use App\Http\Controllers\Admin\EducationPlanController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\PositionsController;
+use App\Http\Controllers\Admin\ClassesController;
+use App\Http\Controllers\Admin\RoomController;
+
 use App\Http\Controllers\Admin\AchievementScoreController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -24,6 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('competitions', CompetitionController::class);
     Route::resource('feedbacks', FeedbackController::class);
     Route::resource('times', TimesController::class);
+
     Route::resource('competition_types', CompetitionTypeController::class);
     Route::resource('student-statuses', StudentStatusController::class);
     Route::resource('news-category', NewsCategoryController::class);
@@ -41,5 +45,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('competitions', CompetitionController::class);
     Route::resource('teachers', TeacherController::class);
     Route::resource('positions', PositionsController::class);
+
+    Route::resource('classes', ClassesController::class);
+    Route::resource('rooms', RoomController::class);
+
+
 });
 

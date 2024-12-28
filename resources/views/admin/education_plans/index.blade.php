@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    Тип оценки
+    Education_plans
 @endsection
 
 @section('sub-title')
