@@ -1,6 +1,6 @@
-php
-
 @extends('admin.layouts.app')
+
+
 @section('title')
    Добавление позиции
 @endsection
@@ -10,6 +10,7 @@ php
 @section('content')
     <div class="card">
         <div class="card-body">
+
 
     <form action="{{ route('admin.rooms.store') }}" method="POST">
         @csrf
@@ -33,4 +34,4 @@ php
     </form>
     </div>
     </div>
-@endsection
+@endsection 

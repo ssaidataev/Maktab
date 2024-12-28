@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 @section('title')
-    Тип компитентции
+    Times
 @endsection
 
 @section('sub-title')
-    Список компитентции
+    Times
 @endsection
 
 
