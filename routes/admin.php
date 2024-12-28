@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\CompetitionController;
 use App\Http\Controllers\Admin\MarkTypeController;
 use App\Http\Controllers\Admin\TimesController;
+use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\StudentStatusController;
 use App\Http\Controllers\Admin\AchievementLevelController;
 use App\Http\Controllers\Admin\AchievementPlaceController;
@@ -17,7 +18,6 @@ use App\Http\Controllers\Admin\EducationPlanController;
 use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\PositionsController;
 use App\Http\Controllers\Admin\AchievementScoreController;
-
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('mark-types', MarkTypeController::class);
@@ -39,6 +39,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('education_plans', EducationPlanController::class);
     Route::resource('education_levels', EducationLevelController::class);
     Route::resource('competitions', CompetitionController::class);
+    Route::resource('teachers', TeacherController::class);
     Route::resource('positions', PositionsController::class);
 });
 

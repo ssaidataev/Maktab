@@ -9,7 +9,6 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 class EducationLevel extends Model
 {
     use HasFactory;
-
     protected $table = 'education_levels';
 
     protected $fillable = [
