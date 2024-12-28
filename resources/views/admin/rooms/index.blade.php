@@ -10,10 +10,13 @@
 
 
 @section('content')
+
+
     <div class="card">
         <div class="card-header">
             <a href="{{ route('admin.rooms.create') }}" class="btn btn-primary">Создать новый</a>
         </div>
+
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>

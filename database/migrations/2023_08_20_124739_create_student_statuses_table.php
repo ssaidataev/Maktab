@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('student_statuses', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->string('name', 45);
-            $table->string('description', 45);
+            $table->string('name', 255);
+            $table->text('description');
             $table->boolean('is_active')->nullable()->default(true);
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();

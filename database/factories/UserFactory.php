@@ -4,18 +4,12 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class UserFactory extends Factory
 {
-    /**
-     * The current password being used by the factory.
-     */
-    protected static ?string $password;
-
     /**
      * Define the model's default state.
      *
@@ -24,21 +18,24 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'middle_name' => $this->faker->optional()->firstName,
+            'username' => $this->faker->unique()->userName,
+            'email' => $this->faker->unique()->safeEmail,
+            'email_verified_at' => $this->faker->optional()->dateTime,
+            'password' => Hash::make('password'),
+            'two_factor_secret' => $this->faker->optional()->text,
+            'two_factor_recovery_codes' => $this->faker->optional()->text,
+            'remember_token' => $this->faker->optional()->sha256,
+            'gender' => $this->faker->boolean,
+            'phone' => $this->faker->unique()->phoneNumber,
+            'birth_date' => $this->faker->date,
+            'address' => $this->faker->address,
+            'is_active' => $this->faker->boolean(90), // 90% вероятность true
+            'is_access' => $this->faker->boolean(90),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     */
-    public function unverified(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
     }
 }

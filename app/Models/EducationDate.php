@@ -15,7 +15,15 @@ class EducationDate extends Model
         'start_year',
         'end_year',
         'is_active',
+        'created_at',
+        'updated_at',
+    ];
+    public $timestamps = true;
+    protected $casts = [
+        'is_active' => 'boolean',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
-    public $timestamps = true; // Для использования created_at и updated_at
+
 }

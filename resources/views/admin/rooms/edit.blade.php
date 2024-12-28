@@ -1,3 +1,4 @@
+
 @extends('admin.layouts.app')
 @section('title')
     Тип оценки
@@ -39,4 +40,5 @@
             </form>
         </div>
     </div>
+
 @endsection

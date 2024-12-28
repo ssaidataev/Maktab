@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
 
+namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Models\MarkType;
 use App\Models\Room;
 use Illuminate\Http\Request;
-
 class RoomController extends Controller
 {
     public function index()
     {
-        $room = Room::all();
-        return view('admin.rooms.index', compact('room'));
+      
+        $rooms = Room::all();
+        return view('admin.rooms.index', compact('rooms'));
     }
 
     public function create()
@@ -25,7 +24,7 @@ class RoomController extends Controller
         $request->validate([
             'name' => 'required|string|max:45',
             'flloor' => 'required|string|max:5|min:1',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
             'is_active' => 'boolean',
         ]);
 
@@ -51,13 +50,14 @@ class RoomController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:45',
+            'floor' => 'required|string|max:45',
+            'description' => 'required|string',
+            'is_active' => 'required|boolean',
         ]);
-
         $rooms = Room::findOrFail($id);
         $rooms->update($request->all());
-
         return redirect()->route('admin.rooms.index')
-            ->with('success', 'Room updated successfully.');
+            ->with('success', 'rooms updated successfully.');
     }
 
     public function destroy($id)
@@ -66,6 +66,6 @@ class RoomController extends Controller
         $rooms->delete();
 
         return redirect()->route('admin.rooms.index')
-            ->with('success', 'Room deleted successfully.');
+            ->with('success', 'rooms deleted successfully.');
     }
 }

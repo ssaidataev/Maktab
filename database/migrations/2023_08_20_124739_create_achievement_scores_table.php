@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('achievement_place_id')->index('achievement_scores_achievement_place_id_foreign');
             $table->integer('competition_id')->index('achievement_scores_competition_id_foreign');
             $table->integer('score');
+            $table->timestamps();
         });
     }
 
