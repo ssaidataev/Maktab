@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    Тип оценки
+    Education_dates
 @endsection
 
 @section('sub-title')

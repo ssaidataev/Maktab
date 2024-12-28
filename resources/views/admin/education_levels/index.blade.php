@@ -4,7 +4,7 @@
 @endsection
 
 @section('sub-title')
-    Список оценок
+    Education_levels
 @endsection
 
 

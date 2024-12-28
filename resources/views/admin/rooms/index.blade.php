@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    Education_plans
+    Тип оценки
 @endsection
 
 @section('sub-title')
@@ -12,7 +12,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('admin.education_plans.create') }}" class="btn btn-primary">Создать новый</a>
+            <a href="{{ route('admin.rooms.create') }}" class="btn btn-primary">Создать новый</a>
         </div>
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
@@ -20,22 +20,24 @@
                 <tr>
                     <th>#</th>
                     <th>Названия</th>
-                    <th>Описания</th>
+                    <th>Этаж</th>
+                    <th>Описание</th>
                     <th>Активность</th>
                     <th>Действия</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($educationPlans as $educationPlan)
+                @foreach ($room as $rooms)
                     <tr>
-                        <td>{{ $educationPlan->id }}</td>
-                        <td>{{ $educationPlan->name }}</td>
-                        <td>{{ $educationPlan->description }}</td>
-                        <td>{{ $educationPlan->is_active ? 'Да' : 'Нет' }}</td>
+                        <td>{{ $rooms->id }}</td>
+                        <td>{{ $rooms->name }}</td>
+                        <td>{{ $rooms->flloor }}</td>
+                        <td>{{ $rooms->description }}</td>
+                        <td>{{ $rooms->is_active ? 'Да' : 'Нет' }}</td>
                         <td>
-                            <a href="{{ route('admin.education_plans.show', $educationPlan->id) }}" class="btn btn-info btn-sm">Показать</a>
-                            <a href="{{ route('admin.education_plans.edit', $educationPlan->id) }}" class="btn btn-warning btn-sm">Изменить</a>
-                            <form action="{{ route('admin.education_plans.destroy', $educationPlan->id) }}" method="POST" style="display:inline;">
+                            <a href="{{ route('admin.rooms.show', $rooms->id) }}" class="btn btn-info btn-sm">Показать</a>
+                            <a href="{{ route('admin.rooms.edit', $rooms->id) }}" class="btn btn-warning btn-sm">Изменить</a>
+                            <form action="{{ route('admin.rooms.destroy', $rooms->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
