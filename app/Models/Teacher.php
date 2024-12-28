@@ -9,5 +9,11 @@ class Teacher extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','position_id','education_level_id'];
+    protected $fillable = [
+        'user_id',
+        'position_id',
+        'education_level_id',
+        'created_at',
+        'updated_at',
+    ];
 }

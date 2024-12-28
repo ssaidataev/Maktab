@@ -1,45 +1,137 @@
-<div class="footer-container">
-    <footer class="w3l-footer-29-main">
-        <div class="footer-29 pt-5 pb-4">
-            <div class="container pt-md-4">
-                <div class="row footer-top-29">
-                    <div class="col-lg-4 col-md-6 footer-list-29">
-                        <h6 class="footer-title-29">Contact Info </h6>
-                        <p class="mb-2 pe-xl-5">Address : Edu School, 10001, 5th Avenue, #06 lane street, NY - 62617.</p>
-                        <p class="mb-2">Phone Number : <a href="tel:+1(21) 234 4567">+1(21) 234 4567</a></p>
-                        <p class="mb-2">Email : <a href="mailto:info@example.com">info@example.com</a></p>
+<!-- footer-area -->
+<footer>
+    <div class="footer-bg theme-bg bg-bottom" data-background="assets/img/bg/shape-bg-02.png">
+        <div class="f-border pt-115 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-2 col-md-4  col-6">
+                        <div class="footer-widget footer-3-col-1 mb-50">
+                            <div class="footer-widget__text mb-35">
+                                <h3 class="footer-widget__title">About</h3>
+                            </div>
+                            <div class="footer-widget__link">
+                                <ul>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">In Press</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-6 footer-list-29 mt-md-0 mt-4">
-                        <ul>
-                            <h6 class="footer-title-29">Quick Links</h6>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="courses.html">Courses</a></li>
-                            <li><a href="#become-teacher">Become a Teacher</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#career">Career</a></li>
-                        </ul>
+                    <div class="col-xl-3 col-md-4 col-6">
+                        <div class="footer-widget footer-3-col-2 mb-50">
+                            <div class="footer-widget__text mb-35">
+                                <h3 class="footer-widget__title">Quick Links</h3>
+                            </div>
+                            <div class="footer-widget__link">
+                                <ul>
+                                    <li><a href="#">Refund Policy</a></li>
+                                    <li><a href="#">Documentation</a></li>
+                                    <li><a href="#">Chat online</a></li>
+                                    <li><a href="#">Order Cancel</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-6 ps-lg-5 ps-lg-4 footer-list-29 mt-md-0 mt-4">
-                        <ul>
-                            <h6 class="footer-title-29">Explore</h6>
-                            <li><a href="#blog">Blog Posts</a></li>
-                            <li><a href="#privacy">Privacy policy</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#license">License & uses</a></li>
-                            <li><a href="#tutorials">Tutorials</a></li>
-                        </ul>
+                    <div class="col-xl-3 col-md-4 col-6">
+                        <div class="footer-widget footer-3-col-3 mb-50">
+                            <div class="footer-widget__text mb-35">
+                                <h3 class="footer-widget__title">Support</h3>
+                            </div>
+                            <div class="footer-widget__link">
+                                <ul>
+                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="#">Online Chat</a></li>
+                                    <li><a href="#">Whatsapp</a></li>
+                                    <li><a href="#">Telegram</a></li>
+                                    <li><a href="#">Ticketing</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-8 footer-list-29 mt-lg-0 mt-4 ps-lg-5">
-                        <h6 class="footer-title-29">Subscribe</h6>
-                        <form action="#" class="subscribe d-flex" method="post">
-                            <input type="email" name="email" placeholder="Email Address" required="">
-                            <button class="button-style"><span class="fa fa-paper-plane" aria-hidden="true"></span></button>
-                        </form>
-                        <p class="mt-3">Subscribe to our mailing list and get updates to your email inbox.</p>
+                    <div class="col-xl-2 col-md-4 col-6">
+                        <div class="footer-widget footer-3-col-4 mb-50">
+                            <div class="footer-widget__text mb-35">
+                                <h3 class="footer-widget__title">FAQ</h3>
+                            </div>
+                            <div class="footer-widget__link">
+                                <ul>
+                                    <li><a href="#">Account</a></li>
+                                    <li><a href="#">Deliveries</a></li>
+                                    <li><a href="#">Orders</a></li>
+                                    <li><a href="#">Payments</a></li>
+                                    <li><a href="#">Return</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-6">
+                        <div class="footer-widget footer-3-col-5 mb-50">
+                            <div class="footer-widget__text mb-35">
+                                <h3 class="footer-widget__title">Products</h3>
+                            </div>
+                            <div class="footer-widget__link">
+                                <ul>
+                                    <li><a href="#">Overview</a></li>
+                                    <li><a href="#">Business Account</a></li>
+                                    <li><a href="#">Credit Card</a></li>
+                                    <li><a href="#">Integrations</a></li>
+                                    <li><a href="#">Rewards</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2">© 2021 Edu School. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">W3Layouts</a></p>
             </div>
         </div>
-    </footer>
-</div>
+        <div class="f-copyright pt-60 pb-40">
+            <div class="container">
+                <div class="row text-center text-lg-start">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="f-copyright__logo mb-30">
+                            <a href="#"><img src="assets/img/logo/logo.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <div class="f-copyright__text text-center mb-30">
+                            <span>Uxaction© 2022, All Rights Reserved</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="f-copyright__social-area mb-20 text-lg-end">
+                            <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fi fi-rr-basketball"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer-area-end -->
+
+
+<!-- JS here -->
+<script src="assets/js/vendor/jquery.js"></script>
+<script src="assets/js/vendor/waypoints.js"></script>
+<script src="assets/js/bootstrap-bundle.js"></script>
+<script src="assets/js/meanmenu.js"></script>
+<script src="assets/js/slick.js"></script>
+<script src="assets/js/magnific-popup.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/backtotop.js"></script>
+<script src="assets/js/nice-select.js"></script>
+<script src="assets/js/counterup.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/isotope-pkgd.js"></script>
+<script src="assets/js/imagesloaded-pkgd.js"></script>
+<script src="assets/js/ajax-form.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>

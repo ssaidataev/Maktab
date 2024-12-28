@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Epora - Online Courses & Education HTML Template</title>
+    <title>@yield('title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -84,13 +84,11 @@
                         <div class="main-menu main-menu-black d-flex justify-content-end">
                             <nav id="mobile-menu">
                                 <ul>
-                                    <li class="has-dropdown">
-                                        <a href="index.html">Home</a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Home Style 1</a></li>
-                                            <li><a href="index-2.html">Home Style 2</a></li>
-                                            <li><a href="index-3.html">Home Style 3</a></li>
-                                        </ul>
+                                    <li class="">
+                                        <a href="{{route('home')}}">Главная</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{route('gallery')}}">Галерея</a>
                                     </li>
                                     <li class="has-dropdown">
                                         <a href="about.html">Pages</a>

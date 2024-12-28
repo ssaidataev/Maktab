@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->integer('id', true);
             $table->string('name', 45);
-            $table->string('flloor', 45);
-            $table->string('description', 45)->nullable();
+            $table->string('floor', 45);
+            $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
