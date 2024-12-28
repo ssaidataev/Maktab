@@ -8,36 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'user_id',
-        'class_id',
-        'student_status_id',
-        'created_by',
-        'updated_by',
-        'created_at',
-        'updated_at',
-    ];
-
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
+    protected $table = 'students';
+    protected $fillable= ['user_id','class_id','student_status_id'];
     public $timestamps = true;
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function student_classes()
+    {
+        return $this->belongsTo(StudentClasses::class);
+
+    }
+
+    public function student_status()
+    {
+        return $this->belongsTo(StudentStatus::class);
+    }
+
+
 }
